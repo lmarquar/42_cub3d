@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:15 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:16 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/12 11:54:02 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ int	all_ones_and_spaces(char *line)
 char	*get_line_for_layout(int fd)
 {
 	char	*line;
-	int		i;
 
 	line = gnl_no_nl(fd);
-	i = 0;
 	while (line && !all_ones_and_spaces(line))
 	{
 		free(line);
