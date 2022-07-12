@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:03 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:35:07 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:43:30 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ t_texture	*get_texture(t_data *data, char *filename)
 	tex->img_matrix = create_matrix(tex->img, tex->width,
 			tex->height, tex->img_sl);
 	if (tex->height > tex->width)
-		tex->size = (tex->width) / 100 * 100;
+		tex->size = (tex->width);
 	else
-		tex->size = (tex->height) / 100 * 100;
-	if (tex->size < 100)
-		exit_program(2, data, filename);
+		tex->size = (tex->height);
+	// if (tex->size < 100)
+	// 	exit_program(2, data, filename);
 	return (tex);
 }
 

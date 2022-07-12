@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:02 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:04 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:52:09 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ void	check_string2(t_textures *t, char *string, int i)
 		if (!print_error_if_aready_exists(t->nswe[0], "NO-texture"))
 			t->nswe[0] = find_first_occurence(string, "./");
 	}
+	else if (!ft_strncmp(&string[i], "EA ", 3))
+	{
+		if (!print_error_if_aready_exists(t->nswe[1], "EA-texture"))
+			t->nswe[1] = find_first_occurence(string, "./");
+	}
 	else if (!ft_strncmp(&string[i], "SO ", 3))
 	{
-		if (!print_error_if_aready_exists(t->nswe[1], "SO-texture"))
-			t->nswe[1] = find_first_occurence(string, "./");
+		if (!print_error_if_aready_exists(t->nswe[2], "SO-texture"))
+			t->nswe[2] = find_first_occurence(string, "./");
 	}
 	else if (!ft_strncmp(&string[i], "WE ", 3))
 	{
-		if (!print_error_if_aready_exists(t->nswe[2], "WE-texture"))
-			t->nswe[2] = find_first_occurence(string, "./");
-	}
-	else if (!ft_strncmp(&string[i], "EA ", 3))
-	{
-		if (!print_error_if_aready_exists(t->nswe[3], "EA-texture"))
+		if (!print_error_if_aready_exists(t->nswe[3], "WE-texture"))
 			t->nswe[3] = find_first_occurence(string, "./");
 	}
 }
