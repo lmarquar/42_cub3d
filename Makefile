@@ -40,7 +40,7 @@ $(TEST_NAME): $(LIBFT)
 
 valgrindcheck: fclean $(LIBFT)
 	$(CC) $(CFLAGS) $(SRC) $(LBMLX) $(LIBS) $(LIBFT) -o $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) testmap.cub
+	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) testmap.cub
 
 leakcheck:		fclean $(LIBFT)
 	$(CC) $(CFLAGS) $(SRC) $(LBMLX) $(LIBS) $(LIBFT) -o $(NAME)
