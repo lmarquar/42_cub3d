@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_load.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:02 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/12 14:52:09 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/13 15:43:12 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	*get_floor_or_cealing(char *s)
 	int		x;
 
 	color = ft_calloc(5, sizeof(int));
-	t = &s[2];
+	t = s;
+	while (*t < '0' || *t > '9')
+		t++;
 	ci = 0;
 	while (ci < 3)
 	{
