@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:31 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:35:33 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:57:29 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ t_graphic	*create_window(void)
 	t_graphic	*g;
 
 	g = ft_calloc(1, sizeof(t_graphic));
-	g->img_y = 800;
-	g->img_x = 1200;
+	g->img_y = 600;
+	g->img_x = 900;
 	g->mlx_ptr = mlx_init();
 	g->img_ptr = mlx_new_image(g->mlx_ptr, g->img_x, g->img_y);
 	g->win_ptr = mlx_new_window(g->mlx_ptr, g->img_x, g->img_y, "cube3d");
