@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:05 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 12:09:32 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 14:09:46 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,41 @@ int	textures_not_complete(t_textures *t)
 	return (0);
 }
 
-int	texture_valid_format(char *s)
+char	*texture_valid_format_error(char *s, char *string, int errornbr)
 {
-	int	fd;
+	if (errornbr == 1)
+		printf("ERROR\nTexturefile \"%s\" has wrong format\n", s);
+	if (errornbr == 2)
+		printf("ERROR\nTexturefile %s couldn't be found\n", string);
+	free (string);
+	return (NULL);
+}
 
-	fd = open(s, O_RDONLY);
-	if (fd == -1)
+char	*texture_valid_format(char *s)
+{
+	int		i;
+	int		start;
+	int		fd;
+	char	*new_string;
+
+	i = 0;
+	while (s[i] == ' ')
+		i++;
+	start = i;
+	while (s[i] != ' ' && s[i] != 0)
+		i++;
+	new_string = ft_strdupn(&s[start], i - start);
+	while (s[i] != 0)
 	{
-		printf("ERROR\nTexturefile %s couldn't be found\n", s);
-		return (0);
+		if (s[i] != ' ')
+			return (texture_valid_format_error(s, new_string, 1));
+		i++;
 	}
+	fd = open(new_string, O_RDONLY);
+	if (fd == -1)
+		return (texture_valid_format_error(s, new_string, 2));
 	close(fd);
-	return (1);
+	return (new_string);
 }
 
 int	check_f_c_string2(char *s, int i, int digit_count)

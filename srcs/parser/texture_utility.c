@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:59 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 11:52:50 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:59:36 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,4 @@ void	textures_free_all(t_textures *t)
 	if (t->floor)
 		free(t->floor);
 	free(t);
-}
-
-char	*find_first_occurence(char *s, char *x)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	while (s[i])
-	{
-		j = 0;
-		while (x[j])
-		{
-			if (s[i] == x[j])
-				break ;
-			j++;
-		}
-		if (s[i] == x[j])
-			break ;
-		i++;
-	}
-	if (!s[i])
-		return (NULL);
-	if (!texture_valid_format(&s[i]))
-		return (NULL);
-	return (ft_strdup(&s[i]));
 }

@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:08 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 11:55:58 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 13:02:31 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			is_start_chr(char c);
 
 t_textures	*load_textures(int fd);
 char		*find_first_occurence(char *s, char *x);
-int			texture_valid_format(char *s);
+char		*texture_valid_format(char *s);
 void		textures_free_all(t_textures *t);
 int			textures_not_complete(t_textures *t);
 
