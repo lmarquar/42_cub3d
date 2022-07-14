@@ -6,38 +6,46 @@
 /*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:02 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/13 15:43:12 by lmarquar         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:54:27 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+int	*color_from_string(int *color, char **s)
+{
+	int	ci;
+	int	x;
+
+	ci = 0;
+	while (ci < 3)
+	{
+		x = ft_atoi(*s);
+		if (x > 255 || x < 0)
+		{
+			free(color);
+			printf("ERROR\nColorvalue too big in line: %s\n", *s);
+			return (NULL);
+		}
+		color[ci] = x;
+		if (ci < 2)
+			*s = ft_strchr(*s, ',') + 1;
+		ci++;
+	}
+	return (color);
+}
+
 int	*get_floor_or_cealing(char *s)
 {
-	int		ci;
 	int		*color;
 	char	*t;
-	int		x;
 
 	color = ft_calloc(5, sizeof(int));
 	t = s;
 	while (*t < '0' || *t > '9')
 		t++;
-	ci = 0;
-	while (ci < 3)
-	{
-		x = ft_atoi(t);
-		if (x > 255 || x < 0)
-		{
-			free(color);
-			printf("ERROR\nColorvalue too big in line: %s\n", s);
-			return (NULL);
-		}
-		color[ci] = x;
-		if (ci < 2)
-			t = ft_strchr(t, ',') + 1;
-		ci++;
-	}
+	if (!color_from_string(color, &t))
+		return (NULL);
 	if (check_text_behind(t, color) != 0)
 		return (NULL);
 	return (color);

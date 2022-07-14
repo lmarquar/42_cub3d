@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:03 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/12 14:43:30 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:20:51 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ t_texture	*get_texture(t_data *data, char *filename)
 		tex->size = (tex->width);
 	else
 		tex->size = (tex->height);
-	// if (tex->size < 100)
-	// 	exit_program(2, data, filename);
 	return (tex);
 }
 
