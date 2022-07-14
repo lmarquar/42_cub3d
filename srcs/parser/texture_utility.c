@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_utility.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:59 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 11:52:50 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:46:37 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

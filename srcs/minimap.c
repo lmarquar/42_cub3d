@@ -6,7 +6,11 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:23 by fmollenh          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/07/14 10:48:10 by fmollenh         ###   ########.fr       */
+=======
+/*   Updated: 2022/07/14 14:03:39 by fmollenh         ###   ########.fr       */
+>>>>>>> 7b46768114fe4c522cd3bfb0e40c83f552e598a2
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +80,12 @@ void	minimap_put_pixel(t_data *data, t_pixel pixel, int zoom)
 		pixel_color(data, &pixel);
 		return ;
 	}
-	if (is_player(pixel, data))
+	if (data->map->map[y][x] == '1')
+		pixel.color = create_color(0, 0, 0);
+	else if (is_player(pixel, data))
 		pixel.color = create_color(0, 0, 220);
 	else if (is_ray(pixel.row, pixel.col, data) == 1)
 		pixel.color = create_color(255, 100, 100);
-	else if (data->map->map[y][x] == '1')
-		pixel.color = create_color(0, 0, 0);
 	else
 		pixel.color = create_color(0, 255, 255);
 	pixel_color(data, &pixel);

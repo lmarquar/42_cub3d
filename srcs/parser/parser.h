@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:08 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 11:55:58 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:46:22 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			is_start_chr(char c);
 
 t_textures	*load_textures(int fd);
 char		*find_first_occurence(char *s, char *x);
-int			texture_valid_format(char *s);
+char		*texture_valid_format(char *s);
 void		textures_free_all(t_textures *t);
 int			textures_not_complete(t_textures *t);
 

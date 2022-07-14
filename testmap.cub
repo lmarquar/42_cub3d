@@ -1,10 +1,17 @@
-NO ./include/xpm/wood.xpm
-WE ./include/xpm/colorstone.xpm
-SO ./include/xpm/redbrick.xpm
-EA ./include/xpm/bluestone.xpm
+NO   ./include/xpm/wood.xpm
+WE            ./include/xpm/colorstone.xpm
+        SO       ./include/xpm/redbrick.xpm    
 
+<<<<<<< HEAD
       C      225,     45   ,    254
 F         80,50,0
+=======
+
+      C      225,   50    , 35   
+F 80,50,0
+>>>>>>> 7b46768114fe4c522cd3bfb0e40c83f552e598a2
+
+EA  ./include/xpm/bluestone.xpm
 
 111111111111111111111111
 111111000111100000000001

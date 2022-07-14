@@ -6,7 +6,7 @@
 /*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:02 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 15:41:12 by lmarquar         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:45:59 by lmarquar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,22 @@ void	check_string2(t_textures *t, char *string, int i)
 	if (!ft_strncmp(&string[i], "NO ", 3))
 	{
 		if (!print_error_if_aready_exists(t->nswe[0], "NO-texture"))
-			t->nswe[0] = find_first_occurence(string, "./");
+			t->nswe[0] = texture_valid_format(&string[i + 2]);
 	}
 	else if (!ft_strncmp(&string[i], "EA ", 3))
 	{
 		if (!print_error_if_aready_exists(t->nswe[1], "EA-texture"))
-			t->nswe[1] = find_first_occurence(string, "./");
+			t->nswe[1] = texture_valid_format(&string[i + 2]);
 	}
 	else if (!ft_strncmp(&string[i], "SO ", 3))
 	{
 		if (!print_error_if_aready_exists(t->nswe[2], "SO-texture"))
-			t->nswe[2] = find_first_occurence(string, "./");
+			t->nswe[2] = texture_valid_format(&string[i + 2]);
 	}
 	else if (!ft_strncmp(&string[i], "WE ", 3))
 	{
 		if (!print_error_if_aready_exists(t->nswe[3], "WE-texture"))
-			t->nswe[3] = find_first_occurence(string, "./");
+			t->nswe[3] = texture_valid_format(&string[i + 2]);
 	}
 }
 
