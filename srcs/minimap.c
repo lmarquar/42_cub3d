@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:23 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:35:25 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 10:48:10 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,4 @@ void	create_minimap(t_data *data)
 			minimap_put_pixel(data, pixel, zoom);
 		}
 	}
-	mlx_put_image_to_window(data->graphic->mlx_ptr, data->graphic->win_ptr,
-		data->graphic->img_ptr, 0, 0);
 }
