@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   layout_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:18 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/13 15:30:43 by lmarquar         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:25:07 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ int	gaps_in_wall(char **layout, int x, int y)
 	int	res;
 
 	res = 0;
-	if (y == 0 || x == 0 || !layout[y] || !layout[y][x])
+	if (y == 0 || x == 0 || !layout[y] || !layout[y][x]
+		|| (layout[y][x] != '0' && layout[y][x] != ' '))
 		return (1);
-	if (layout[y][x] == '0' || layout[y][x] == ' ')
-		layout[y][x] = '1';
-	else
-		return (1);
+	layout[y][x] = '1';
 	if (layout[y - 1][x] != '1')
 		res += gaps_in_wall(layout, x, y - 1);
 	if (layout[y][x + 1] != '1')

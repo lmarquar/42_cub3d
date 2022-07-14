@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:08 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/11 16:36:10 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/14 11:55:58 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			textures_not_complete(t_textures *t);
 
 char		*gnl_no_nl(int fd);
 char		*find_needle(char *haystack, char *needle);
-int			check_text_behind(char *t, int *color);
+int			check_f_c_string(char *s);
 int			print_error_if_aready_exists(void *ptr, char *string);
 
 #endif

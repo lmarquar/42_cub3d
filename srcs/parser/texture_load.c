@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_load.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:36:02 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/13 15:43:12 by lmarquar         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:11:48 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	*get_floor_or_cealing(char *s)
 	char	*t;
 	int		x;
 
+	if (check_f_c_string(s) != 0)
+		return (NULL);
 	color = ft_calloc(5, sizeof(int));
 	t = s;
-	while (*t < '0' || *t > '9')
-		t++;
 	ci = 0;
 	while (ci < 3)
 	{
@@ -30,7 +30,6 @@ int	*get_floor_or_cealing(char *s)
 		if (x > 255 || x < 0)
 		{
 			free(color);
-			printf("ERROR\nColorvalue too big in line: %s\n", s);
 			return (NULL);
 		}
 		color[ci] = x;
@@ -38,8 +37,6 @@ int	*get_floor_or_cealing(char *s)
 			t = ft_strchr(t, ',') + 1;
 		ci++;
 	}
-	if (check_text_behind(t, color) != 0)
-		return (NULL);
 	return (color);
 }
 
@@ -77,12 +74,12 @@ void	check_string(t_textures *t, char *string)
 	if (!ft_strncmp(&string[i], "F ", 2))
 	{
 		if (!print_error_if_aready_exists(t->floor, "Floorcolor"))
-			t->floor = get_floor_or_cealing(string);
+			t->floor = get_floor_or_cealing(&string[i + 2]);
 	}
 	else if (!ft_strncmp(&string[i], "C ", 2))
 	{
 		if (!print_error_if_aready_exists(t->ceil, "Ceilingcolor"))
-			t->ceil = get_floor_or_cealing(string);
+			t->ceil = get_floor_or_cealing(&string[i + 2]);
 	}
 	else
 		check_string2(t, string, i);
@@ -105,7 +102,6 @@ t_textures	*load_textures(int fd)
 	free (tmp);
 	if (textures_not_complete(t))
 	{
-		printf("ERROR\nError while loading textures\n");
 		textures_free_all(t);
 		return (NULL);
 	}
