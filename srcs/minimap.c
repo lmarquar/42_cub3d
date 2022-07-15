@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmarquar <lmarquar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:23 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/14 15:47:27 by lmarquar         ###   ########.fr       */
+/*   Updated: 2022/07/15 11:38:28 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ int	is_player(t_pixel pixel, t_data *data)
 {
 	int	lower_limit;
 	int	upper_limit;
+	int	calc;
 
-	lower_limit = (data->map->minimap_size / 2) - (sqrt(pow
-				(data->player->radius, 2) - pow(pixel.row
-					- (data->map->minimap_size / 2), 2)));
-	upper_limit = (data->map->minimap_size / 2) + (sqrt(pow
-				(data->player->radius, 2) - pow(pixel.row
-					- (data->map->minimap_size / 2), 2)));
+	calc = sqrt(pow(data->player->radius, 2) - pow(pixel.row
+				- (data->map->minimap_size / 2), 2));
+	lower_limit = (data->map->minimap_size / 2) - calc;
+	upper_limit = (data->map->minimap_size / 2) + calc;
 	if (lower_limit < pixel.col && pixel.col < upper_limit)
 		return (1);
 	else

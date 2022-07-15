@@ -2,7 +2,7 @@ NO   ./include/xpm/wood.xpm
 WE            ./include/xpm/colorstone.xpm
         SO       ./include/xpm/redbrick.xpm    
 
-      C      225,     45   ,    254
+      C      225,     45   ,    25
 F         80,50,0
 
 EA  ./include/xpm/bluestone.xpm
