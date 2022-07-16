@@ -1,11 +1,11 @@
 NO   ./include/xpm/wood.xpm
-WE            ./include/xpm/colorstone.xpm
-        SO       ./include/xpm/redbrick.xpm    
+EA      ./include/xpm/colorstone.xpm
+        WE       ./include/xpm/redbrick.xpm    
 
       C      225,     45   ,    25  
 F         80,50,0
 
-EA  ./include/xpm/bluestone.xpm
+SO  ./include/xpm/bluestone.xpm
 
 111111111111111111111111
 111111000111100000000001

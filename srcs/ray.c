@@ -6,7 +6,7 @@
 /*   By: fmollenh <fmollenh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 16:35:13 by fmollenh          #+#    #+#             */
-/*   Updated: 2022/07/12 15:04:44 by fmollenh         ###   ########.fr       */
+/*   Updated: 2022/07/16 13:29:08 by fmollenh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int	*select_texture(t_data *data, t_ray ray, int wall_pixel_y)
 	if (data->rays->orientation == 'p'
 		&& (ray.angle < 90 || ray.angle > 270))
 		ray.pixel.color = get_tex_pixel(data,
-				data->tex->west, ray, wall_pixel_y);
+				data->tex->east, ray, wall_pixel_y);
 	if (data->rays->orientation == 'p'
 		&& (ray.angle > 90 && ray.angle < 270))
 		ray.pixel.color = get_tex_pixel(data,
-				data->tex->east, ray, wall_pixel_y);
+				data->tex->west, ray, wall_pixel_y);
 	if (data->rays->orientation == 'h'
 		&& ray.angle > 180)
 		ray.pixel.color = get_tex_pixel(data,
